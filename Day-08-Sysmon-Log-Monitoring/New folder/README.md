@@ -990,8 +990,4 @@ This phase improved my practical knowledge of endpoint telemetry, Sysmon monitor
 
 ---
 
-## Next Phase
 
-**Day 09 - File Integrity Monitoring and Critical File Change Detection**
-
-The next phase focuses on monitoring critical files and directories, detecting unauthorized file modifications, analyzing File Integrity Monitoring alerts, and investigating file change activity through the Wazuh SIEM platform.
