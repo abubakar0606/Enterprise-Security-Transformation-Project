@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="project-thumbnail.png" alt="Enterprise Security Transformation Project" width="100%">
+  <img src="project-thumbnail.png.png" alt="Enterprise Security Transformation Project" width="100%">
 </p>
 
 <h1 align="center">🛡️ Enterprise Security Transformation Project</h1>
