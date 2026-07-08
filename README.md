@@ -1,3 +1,20 @@
+<p align="center">
+  <img src="project-thumbnail.png" alt="Enterprise Security Transformation Project" width="100%">
+</p>
+
+<h1 align="center">🛡️ Enterprise Security Transformation Project</h1>
+
+<p align="center">
+  <b>SecureTech Solutions</b><br>
+  Building a Modern, Monitored & Secure Enterprise Environment
+</p>
+
+---
+
+## 📌 Project Overview
+
+
+
 # 🛡️ Enterprise Security Transformation Project (ESTP)
 
 ## SecureTech Solutions
