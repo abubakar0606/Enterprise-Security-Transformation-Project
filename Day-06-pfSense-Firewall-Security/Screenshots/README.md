@@ -57,7 +57,7 @@ pfSense Community Edition was deployed as a virtual machine inside VMware Workst
 
 The firewall virtual machine provides network security and routing services for the SecureTech Solutions lab environment.
 
-![pfSense Virtual Machine Deployment](Screenshots/01-pfsense-virtual-machine-deployment.png)
+![pfSense Virtual Machine Deployment](Screenshots/Screenshot%202026-07-04%20094022.png)
 
 The virtual deployment allows the enterprise network architecture to be tested without requiring dedicated physical firewall hardware.
 
@@ -82,7 +82,7 @@ The LAN interface was configured with:
 
 `192.168.10.1/24`
 
-![pfSense WAN and LAN Interface Configuration](Screenshots/02-pfsense-wan-lan-interface-configuration.png)
+![pfSense WAN and LAN Interface Configuration](Screenshots/Screenshot%202026-07-04%20094135.png)
 
 The LAN address `192.168.10.1` acts as the gateway for systems inside the SecureTech internal network.
 
@@ -126,9 +126,9 @@ This architecture places the firewall between the internal enterprise network an
 
 The pfSense firewall provides a browser-based management interface called the WebConfigurator.
 
-The management portal was accessed from the internal network.
+The management portal was successfully accessed from the internal network.
 
-![pfSense Web Interface Login](Screenshots/03-pfsense-web-interface-login.png)
+![pfSense Web Interface Login](Screenshots/Screenshot%202026-07-04%20094456.png)
 
 The WebConfigurator provides centralized firewall administration.
 
@@ -150,11 +150,13 @@ Management access should only be available to authorized administrators.
 
 ## pfSense Firewall Dashboard
 
-After authentication, the pfSense firewall dashboard was successfully accessed through:
+After authentication, the pfSense firewall dashboard was successfully accessed through the LAN management interface.
 
-`https://192.168.10.1`
+The firewall management address was:
 
-![pfSense Firewall Dashboard](Screenshots/04-pfsense-firewall-dashboard.png)
+`192.168.10.1`
+
+![pfSense Firewall Dashboard](Screenshots/Screenshot%202026-07-04%20094522.png)
 
 The dashboard provides centralized visibility into the firewall system.
 
@@ -162,7 +164,7 @@ The deployed firewall was running:
 
 `pfSense 2.7.0-RELEASE (amd64)`
 
-The dashboard can provide information about:
+The dashboard provides information about:
 
 - Firewall version
 - System status
@@ -197,25 +199,25 @@ The network configuration included:
 | Default Gateway | 192.168.10.1 |
 | DNS Server | 192.168.10.1 |
 
-![Domain Controller Network Configuration](Screenshots/05-domain-controller-network-configuration.png)
+![Domain Controller Network Configuration](Screenshots/Screenshot%202026-07-04%20094724.png)
 
 The default gateway points to the pfSense LAN interface.
 
 This allows network traffic from the Domain Controller to be routed through the firewall.
 
-### Important DNS Design Note
+### Active Directory DNS Design Note
 
-The screenshot shows the Domain Controller using `192.168.10.1` as its DNS server.
+The screenshot shows the Domain Controller using `192.168.10.1` as the DNS server.
 
 For a Windows Active Directory environment, the Domain Controller should normally use the internal Active Directory DNS service for domain name resolution.
 
-A recommended design is:
+A recommended configuration is:
 
-`DC-01 DNS → 192.168.10.10`
+`Preferred DNS Server: 192.168.10.10`
 
 External DNS resolution can then be handled through DNS forwarders.
 
-This design helps Active Directory services correctly resolve internal domain records.
+This design helps Active Directory correctly resolve internal domain records and services.
 
 ---
 
@@ -227,21 +229,21 @@ The following command was executed:
 
 `ping 192.168.10.1`
 
-![pfSense Gateway Connectivity Test](Screenshots/06-pfsense-gateway-connectivity-test.png)
+![pfSense Gateway Connectivity Test](Screenshots/Screenshot%202026-07-04%20094759.png)
 
-The test returned:
+The connectivity test returned:
 
-`Sent = 4`
+`Packets Sent = 4`
 
-`Received = 4`
+`Packets Received = 4`
 
-`Lost = 0`
+`Packets Lost = 0`
 
-`0% packet loss`
+`Packet Loss = 0%`
 
 The successful ICMP replies confirmed Layer 3 connectivity between the Domain Controller and the pfSense LAN interface.
 
-This validated the basic internal network configuration.
+This validated the internal network and gateway configuration.
 
 ---
 
@@ -249,17 +251,17 @@ This validated the basic internal network configuration.
 
 The Wazuh SIEM server was connected to the SecureTech internal network.
 
-The Wazuh server was running on Ubuntu Server.
+The Wazuh server was running on Ubuntu Server 22.04 LTS.
 
 The server received the following IPv4 address:
 
 `192.168.10.12`
 
-![Wazuh Server Network Configuration](Screenshots/07-wazuh-server-network-configuration.png)
+![Wazuh Server Network Configuration](Screenshots/Screenshot%202026-07-04%20095856.png)
 
 The Wazuh server is positioned inside the internal enterprise network.
 
-Its role is to provide centralized security monitoring.
+Its role is to provide centralized security monitoring and log analysis.
 
 Wazuh can collect and analyze security telemetry from:
 
@@ -279,7 +281,7 @@ The network placement prepares the environment for centralized SIEM monitoring.
 
 pfSense was selected as the network security gateway for the SecureTech Solutions environment.
 
-![pfSense Firewall Platform](Screenshots/08-pfsense-firewall-platform.png)
+![pfSense Firewall Platform](Screenshots/images%20%281%29.jpg)
 
 The firewall provides a foundation for implementing network-level security controls.
 
@@ -316,6 +318,18 @@ Important firewall events may include:
 
 Firewall logs provide valuable network-level security visibility.
 
+A SOC analyst can use firewall logs to understand:
+
+- Source IP address
+- Destination IP address
+- Source port
+- Destination port
+- Network protocol
+- Firewall action
+- Connection direction
+
+This information helps during security investigations.
+
 ---
 
 ## Firewall Logs and SIEM
@@ -348,12 +362,13 @@ This architecture allows network security events to be analyzed together with en
 
 For example, a SOC analyst may correlate:
 
-- Multiple failed Windows logins
+- Multiple failed Windows login attempts
 - Suspicious source IP activity
 - Firewall connection attempts
 - Endpoint process execution
+- File integrity changes
 
-Correlation between multiple security data sources improves threat detection.
+Correlation between multiple security data sources improves threat detection and investigation.
 
 ---
 
@@ -418,7 +433,7 @@ and:
 
 `Block Unnecessary Traffic`
 
-This reduces the attack surface of the network.
+This approach reduces the attack surface of the network.
 
 Firewall rules should also be documented and regularly reviewed.
 
@@ -443,7 +458,7 @@ The `ipconfig /all` command was used to verify the Domain Controller network con
 
 The `ping` command was used to validate communication with the firewall gateway.
 
-These commands are important for basic network troubleshooting and SOC investigation.
+These commands are important for network troubleshooting and SOC investigations.
 
 ---
 
