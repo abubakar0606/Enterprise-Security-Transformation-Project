@@ -202,57 +202,8 @@ The virtual environment allows security configurations and attack simulations to
 
 This approach provides a controlled environment for SOC analysis, log monitoring, firewall testing, and security investigation.
 
----
 
-## Implementation Evidence
 
-### 1. Windows Client Virtual Machine
-
-![Windows Client Virtual Machine](Screenshots/01-windows-client-vm.png)
-
-A Windows client virtual machine was prepared to represent an enterprise user endpoint.
-
----
-
-### 2. Windows Server Virtual Machine
-
-![Windows Server Virtual Machine](Screenshots/02-windows-server-vm.png)
-
-The Windows Server virtual machine was prepared for centralized enterprise services and identity management.
-
----
-
-### 3. Enterprise Project and Infrastructure Overview
-
-![Enterprise Project Overview](Screenshots/03-enterprise-project-overview.png)
-
-The project overview documents the SecureTech Solutions scenario, company departments, enterprise network topology, IP address plan, and virtual lab architecture.
-
----
-
-### 4. VMware Virtual Security Lab
-
-![VMware Virtual Lab](Screenshots/04-vmware-virtual-lab-environment.png)
-
-VMware Workstation Pro 17 hosts the virtual enterprise cybersecurity infrastructure used throughout the project.
-
----
-
-### 5. pfSense Firewall Virtual Machine
-
-![pfSense Firewall VM](Screenshots/05-pfsense-firewall-vm.png)
-
-The pfSense firewall virtual machine was prepared with WAN and LAN network interfaces for enterprise network security.
-
----
-
-### 6. Enterprise Network Topology
-
-![Enterprise Network Topology](Screenshots/06-enterprise-network-topology.png)
-
-The network topology illustrates the planned enterprise architecture, including the firewall, core switching layer, departmental VLANs, server infrastructure, SOC network, and guest network.
-
----
 
 ## Security Design Considerations
 
