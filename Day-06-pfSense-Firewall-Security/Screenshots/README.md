@@ -57,7 +57,7 @@ pfSense Community Edition was deployed as a virtual machine inside VMware Workst
 
 The firewall virtual machine provides network security and routing services for the SecureTech Solutions lab environment.
 
-![pfSense Virtual Machine Deployment](Screenshots/Screenshot%202026-07-04%20094022.png)
+
 
 The virtual deployment allows the enterprise network architecture to be tested without requiring dedicated physical firewall hardware.
 
@@ -82,7 +82,7 @@ The LAN interface was configured with:
 
 `192.168.10.1/24`
 
-![pfSense WAN and LAN Interface Configuration](Screenshots/Screenshot%202026-07-04%20094135.png)
+
 
 The LAN address `192.168.10.1` acts as the gateway for systems inside the SecureTech internal network.
 
@@ -128,7 +128,7 @@ The pfSense firewall provides a browser-based management interface called the We
 
 The management portal was successfully accessed from the internal network.
 
-![pfSense Web Interface Login](Screenshots/Screenshot%202026-07-04%20094456.png)
+
 
 The WebConfigurator provides centralized firewall administration.
 
@@ -156,7 +156,7 @@ The firewall management address was:
 
 `192.168.10.1`
 
-![pfSense Firewall Dashboard](Screenshots/Screenshot%202026-07-04%20094522.png)
+
 
 The dashboard provides centralized visibility into the firewall system.
 
@@ -199,7 +199,7 @@ The network configuration included:
 | Default Gateway | 192.168.10.1 |
 | DNS Server | 192.168.10.1 |
 
-![Domain Controller Network Configuration](Screenshots/Screenshot%202026-07-04%20094724.png)
+
 
 The default gateway points to the pfSense LAN interface.
 
@@ -229,7 +229,6 @@ The following command was executed:
 
 `ping 192.168.10.1`
 
-![pfSense Gateway Connectivity Test](Screenshots/Screenshot%202026-07-04%20094759.png)
 
 The connectivity test returned:
 
@@ -257,7 +256,7 @@ The server received the following IPv4 address:
 
 `192.168.10.12`
 
-![Wazuh Server Network Configuration](Screenshots/Screenshot%202026-07-04%20095856.png)
+
 
 The Wazuh server is positioned inside the internal enterprise network.
 
@@ -281,7 +280,7 @@ The network placement prepares the environment for centralized SIEM monitoring.
 
 pfSense was selected as the network security gateway for the SecureTech Solutions environment.
 
-![pfSense Firewall Platform](Screenshots/images%20%281%29.jpg)
+
 
 The firewall provides a foundation for implementing network-level security controls.
 
